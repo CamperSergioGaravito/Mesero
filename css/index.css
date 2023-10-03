@@ -1,0 +1,30 @@
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.cardPedidoCocina {
+    background-color: #CECE5A;
+}
+
+.separador {
+    height: 48%;
+    box-shadow: inset 0 0 2px 2px gray;
+}
+
+.cardCuenta {
+    height: 96%;
+    background-color: #CECE5A;
+}
+
+.contModal {
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
+.btnSubmit {
+    height: 15%;
+}
