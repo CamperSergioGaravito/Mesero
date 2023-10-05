@@ -13,119 +13,10 @@
         <link rel="stylesheet" href="./css/index.css">
     </head>
     <body>
-        <main class="row w-100 h-100 gap-4 position-relative ">
-            <div class="container-fluid position-absolute w-100 h-100 align-items-center justify-content-center contModal" id="tomarPedido">
-                <form action="" method="post" class="col-8 bg-body w-50 h-75 shadow-lg p-2 d-flex flex-column align-content-center gap-3">
-                    <h2 class="text-center fs-1 p-1">Tomar pedido</h2>
-                    <div class="row col-12 d-flex align-items-center justify-content-evenly m-0">
-                        <select class="form-select form-select-lg m-1  w-25" aria-label="Large select example" name="mesa">
-                            <option selected>Mesa</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <select class="form-select form-select-lg m-1  w-25" aria-label="Large select example" name="Mesero">
-                            <option selected>Mesero</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                    <div class="row col-12 d-flex align-items-center justify-content-evenly m-0">
-                        <select class="form-select form-select-lg m-1 w-50" aria-label="Large select example">
-                            <option selected>Platillo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <div class="input-group w-25 ">
-                            <button type="button" class="input-group-text btn btn-danger" id="btnDisminuirItem">-</button>
-                            <input type="text" class="form-control text-center " placeholder="Cant" aria-describedby="basic-addon1">
-                            <button type="button" class="input-group-text btn btn-success" id="btnAumentaItem">+</button>
-                        </div>
-                        <button class="btn btn-primary col-2 h-100 ">Agregar</button>
-                    </div>
-                    <div class="container-fluid w-100 h-50 border border-black overflow-y-scroll">
-                        <table class="table table-striped-columns text-center h-50">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Cant</th>
-                                    <th scope="col">Platillo</th>
-                                    <th scope="col">Precio Unid</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Hamburguesa doble</td>
-                                    <td>$22000</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="container-fluid d-flex align-items-center justify-content-end text-center">
-                        <table class="table table-striped w-50">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Total</th>
-                                    <th scope="col">$44000</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="row btnSubmit align-items-center justify-content-evenly">
-                        <input type="submit" class="btn btn-success col-5 h-75 fs-3" id="btnSubmitPedido">
-                        <button type="button" class="btn btn-danger col-5 h-75 fs-3" id="btnCancelarPedido">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-3 col-sm-12 col-lg-3 h-100 d-flex flex-column align-items-center gap-2 p-2 overflow-y-scroll shadow separador">
+        <main class="row col-12 h-100 gap-4 position-relative" id="mainCont">
+            <!-- MODAL -->
+            
+            <div class="col-3 col-sm-12 col-lg-3 h-100 flex-column align-items-center gap-2 p-2 overflow-y-scroll shadow separador" id="contPedidosCocina">
                 <div class="card col-10 text-center cardPedidoCocina">
                     <div class="card-head fs-3">
                         Pedido realizado
@@ -220,8 +111,8 @@
                     <div class="card-footer fs-5">Tiempo transcurrido 22:15:25 / 00:25:00</div>
                 </div>
             </div>
-            <div class="row col-9 d-flex flex-column justify-content-evenly">
-                <div class="row col-12 border shadow align-items-center separador">
+            <div class="row col-9 col-sm-12 d-flex flex-column justify-content-evenly" id="contCuentMesas">
+                <div class="row col-12 border shadow align-items-center separador" id="contCuenta">
                     <div class="card col-3 text-center cardCuenta">
                         <div class="card-head fs-4">
                             Cuenta
@@ -263,59 +154,12 @@
                         <div class="card-footer fs-5">fecha: 03/10/2023 15:54:12</div>
                     </div>
                 </div>
-                <div class="row col-12 shadow justify-content-evenly p-4 separador">
+                <div class="row col-12 shadow justify-content-evenly p-4 separador" >
                     <div class="row separador__contMesas  align-items-center" id="contMesas">
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">1</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">2</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">3</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">4</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">5</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">6</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">7</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button><button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">8</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">9</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">10</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">11</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
-                        <button class="btn col-2 shadow position-relative d-flex  align-items-center justify-content-center">
-                            <h2 class="position-absolute fs-1 ">12</h2>
-                            <img src="./img/mesa.png" alt="mesa" class="img-fluid rounded-3">
-                        </button>
+                        
                     </div>
                 </div>
             </div>
-            
         </main>
         
 

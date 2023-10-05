@@ -1,14 +1,21 @@
-const formTomarPedido = document.getElementById('tomarPedido');
-const contMesas = document.querySelectorAll('button');
+import { cargarProductos } from "../database/carta.js";
+import { cargarBtns, insertarBtns } from "./insertarBtns.js";
+import { tamañoPantalla } from "./tamañoPantalla.js";
 
-contMesas.forEach(mesa => {
-    mesa.addEventListener('click', (e) => {
-        console.log(formTomarPedido)
-        console.log(e)
-        formTomarPedido.style = 'display: flex;';
-        const btnCancelarPedido = document.getElementById('btnCancelarPedido');
-        btnCancelarPedido.addEventListener('click',() => {
-            formTomarPedido.style = 'display: none;';
-        })
-    })
-})
+/* Tmaño de pantalla */
+tamañoPantalla()
+
+/* Cargar Productos */
+/* localStorage.clear() */
+console.log(JSON.parse(localStorage.getItem('database')).productos)
+cargarProductos()
+
+const contBotones = document.getElementById('contMesas');
+const cantBotones = 12;
+
+/* Cargar botones */
+cargarBtns(contBotones,cantBotones);
+/* Capturar e insertar Botones */
+const botonesMesas = contBotones.querySelectorAll('button');
+insertarBtns(botonesMesas);
+
