@@ -3,12 +3,12 @@ import { cargarBtns, insertarBtns } from "./insertarBtns.js";
 import { tamañoPantalla } from "./tamañoPantalla.js";
 
 /* Tmaño de pantalla */
-tamañoPantalla()
+tamañoPantalla();
 
 /* Cargar Productos */
 /* localStorage.clear() */
+cargarProductos();
 console.log(JSON.parse(localStorage.getItem('database')).productos)
-cargarProductos()
 
 const contBotones = document.getElementById('contMesas');
 const cantBotones = 12;
