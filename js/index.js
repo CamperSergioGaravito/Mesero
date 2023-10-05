@@ -8,7 +8,7 @@ tamañoPantalla();
 /* Cargar Productos */
 /* localStorage.clear() */
 cargarProductos();
-console.log(JSON.parse(localStorage.getItem('database')).productos)
+/* console.log(JSON.parse(localStorage.getItem('database')).productos) */
 
 const contBotones = document.getElementById('contMesas');
 const cantBotones = 12;
