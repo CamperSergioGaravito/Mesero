@@ -6,7 +6,11 @@ export class Pedido {
         this.total = total
     }
     
-    numComanda(num) {
-        this.num = num + 1;
+    numComanda(ref) {
+        this.ref = ref + 1;
+    }
+
+    estado(text) {
+        this.text = text
     }
 }

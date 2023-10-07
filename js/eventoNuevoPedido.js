@@ -1,13 +1,14 @@
-const bdPedidos = JSON.parse(localStorage.getItem('pedidos'));
+import { templatePedidoRealizado } from "./templates.js";
 
 export function nuevoPedido(data) {
+    const bdPedidos = JSON.parse(localStorage.getItem('pedidos'));
     console.log(data)
     if(bdPedidos) {
-        console.log('==>> ',bdPedidos)
-        const result = bdPedidos.push(data)
-        console.log(result)
-        localStorage.setItem('pedidos',JSON.stringify(result));
-        console.log(JSON.parse(localStorage.getItem('pedidos')))
+        bdPedidos.push(data)
+        localStorage.setItem('pedidos',JSON.stringify(bdPedidos));
+        const contPedidosCocina = document.getElementById('contPedidosCocina');
+        const template = templatePedidoRealizado(data);
+        contPedidosCocina.insertAdjacentHTML('beforeend',template);
     }
     else {
         return

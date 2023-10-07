@@ -9,14 +9,14 @@ export function insertarBtns(botonesMesas) {
     botonesMesas.forEach(mesa => {
         mesa.addEventListener('click', (e) => {
             console.log(e);
-            console.log(JSON.parse(localStorage.getItem('pedidos')).length)
+            console.log(JSON.parse(localStorage.getItem('pedidos')))
             const numMesa = mesa.querySelector('h2').textContent;
             const comanda = new Pedido(numMesa,'Juan Carlos')
             comanda.numComanda(JSON.parse(localStorage.getItem('pedidos')).length)
 
             console.log(comanda)
             console.log('mesa ',comanda.mesa);
-            console.log('pedidos ===> ',comanda.num);
+            console.log('pedidos ===> ',comanda.ref);
 
             document.getElementById('mainCont').insertAdjacentHTML('beforeend',modal(comanda));
             const formTomarPedido = document.getElementById('tomarPedido');

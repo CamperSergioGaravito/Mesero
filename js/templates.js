@@ -93,3 +93,51 @@ export function itemPedido(cantidad,platillo,precio) {
     return template
 }
 
+export function templatePedidoRealizado(data) {
+    data.estado('Pedido realizado');
+    console.log(data.estado);
+    console.log(data);
+
+    const template = //html
+                    `
+                    <div class="card col-10 text-center cardPedidoCocina">
+                        <div class="card-head fs-3">
+                            ${data.text}
+                        </div>
+                        <div class="card-body bg-success" id="card">
+                            <div class="card-title fs-2 text-white fw-bold">Mesa ${data.mesa}</div>
+                            <div class="input-group mb-3">
+                                <label aria-label="text input with checkbox" class="form-control">Plato 1</label>
+                                <div class="input-group-text bg-info">
+                                    <input type="checkbox" class="form-check-input mt-0" name="" id="" value="" aria-label="checkboxfor following text input" >
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label aria-label="text input with checkbox" class="form-control">Plato 2</label>
+                                <div class="input-group-text bg-info">
+                                    <input type="checkbox" class="form-check-input mt-0" name="" id="" value="" aria-label="checkboxfor following text input" >
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label aria-label="text input with checkbox" class="form-control">Plato 3</label>
+                                <div class="input-group-text bg-info">
+                                    <input type="checkbox" class="form-check-input mt-0" name="" id="" value="" aria-label="checkboxfor following text input" >
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label aria-label="text input with checkbox" class="form-control">Plato 4</label>
+                                <div class="input-group-text bg-info">
+                                    <input type="checkbox" class="form-check-input mt-0" name="" id="" value="" aria-label="checkboxfor following text input" >
+                                </div>
+                            </div>
+                            <div class="row gap-2 justify-content-center">
+                                <button class="btn btn-danger border border-white col-5" id="cancelarPedido">Cancelar</button>
+                                <button class="btn btn-primary border border-white col-5" id="terminarPedido">Terminar</button>
+                            </div>
+                        </div>
+                        <div class="card-footer fs-5">Tiempo transcurrido 05:15:25 / 00:25:00</div>
+                    </div>
+                    `
+    
+    return template
+}
