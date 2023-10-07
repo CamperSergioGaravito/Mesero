@@ -5,4 +5,8 @@ export class Pedido {
         this.comanda = comanda,
         this.total = total
     }
+    
+    numComanda(num) {
+        this.num = num + 1;
+    }
 }

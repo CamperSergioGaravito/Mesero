@@ -25,9 +25,17 @@ export function cargarProductos() {
                 id: 5,
                 nombre: "Picada personal",
                 precio: 15000
+            },
+
+            {
+                id: 6,
+                nombre: "Arroz con pollo",
+                precio: 8500
             }
         ]
     }
 
     localStorage.setItem("database",JSON.stringify(dataBase))
+    localStorage.setItem("pedidos",JSON.stringify([]));
+    console.log(localStorage)
 }

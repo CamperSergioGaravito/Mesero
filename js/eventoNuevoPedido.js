@@ -1,29 +1,15 @@
-import { itemPedido } from "./templates.js";
+const bdPedidos = JSON.parse(localStorage.getItem('pedidos'));
 
-export function nuevoPedido(data) {;
-    const tbody = document.getElementById('tbodyNP');   
-
-    const trTodos = document.getElementById('tbodyNP').querySelectorAll('tr')
-    const formulario = document.forms.formNuevoPedido.elements;
-
-    trTodos.forEach(tr => {
-        const pedido = {
-            cantidad: tr.children[0].textContent,
-            platillo: tr.children[1].textContent,
-            precioUnd: tr.children[2].textContent,
-        }
-        console.log(pedido)
-        console.log(new Intl.NumberFormat("de-DE").format(parseInt(tr.children[2].textContent)));
-    })
-
-    for(let x=0; x<formulario.length;x++) {
-        if(formulario[x].tagName !== 'button') {
-
-        }
-        console.log()
+export function nuevoPedido(data) {
+    console.log(data)
+    if(bdPedidos) {
+        console.log('==>> ',bdPedidos)
+        const result = bdPedidos.push(data)
+        console.log(result)
+        localStorage.setItem('pedidos',JSON.stringify(result));
+        console.log(JSON.parse(localStorage.getItem('pedidos')))
     }
-    console.log(tbody);
-    console.log(formulario);
-
-    
+    else {
+        return
+    }
 }

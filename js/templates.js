@@ -28,11 +28,11 @@ export function modal(data) {
                                 <div class="row col-12 d-flex align-items-center justify-content-evenly m-0">
                                     <select class="form-select form-select-lg m-1 w-50" aria-label="Large select example" id="selectPlatillos">
                                         <option selected>Platillo</option>
-                                        
+                                        /* Opciones cargadas desde localStorage */
                                     </select>
                                     <div class="input-group w-25 ">
                                         <button type="button" class="input-group-text btn btn-danger" id="btnDisminuirItem">-</button>
-                                        <input type="text" class="form-control text-center " placeholder="Cant" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control text-center " placeholder="Cant" aria-describedby="basic-addon1" id="cantItem" value="">
                                         <button type="button" class="input-group-text btn btn-success" id="btnAumentaItem">+</button>
                                     </div>
                                     <button class="btn btn-primary col-2 h-100 " id="agregarProducto">Agregar</button>
@@ -56,7 +56,7 @@ export function modal(data) {
                                         <thead>
                                             <tr>
                                                 <th scope="col">Total</th>
-                                                <th scope="col">$44000</th>
+                                                <th scope="col">$<span id="total"></span></th>
                                             </tr>
                                         </thead>
                                     </table>
